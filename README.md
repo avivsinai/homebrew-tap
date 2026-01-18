@@ -4,16 +4,17 @@ Homebrew formulae for [avivsinai](https://github.com/avivsinai) CLI tools.
 
 ## Available Formulae
 
-| Formula | Binary | Description |
-|---------|--------|-------------|
-| `bitbucket-cli` | `bkt` | CLI for Bitbucket Cloud - manage repos, PRs, and pipelines |
-| `jk` | `jk` | CLI for Jenkins - GitHub CLI-style workflows for Jenkins |
+| Formula | Alias | Binary | Description |
+|---------|-------|--------|-------------|
+| `bitbucket-cli` | `bkt` | `bkt` | CLI for Bitbucket Cloud - manage repos, PRs, and pipelines |
+| `jk` | - | `jk` | CLI for Jenkins - GitHub CLI-style workflows for Jenkins |
 
 ## Installation
 
 ```bash
-# Install Bitbucket CLI
+# Install Bitbucket CLI (either works)
 brew install avivsinai/tap/bitbucket-cli
+brew install avivsinai/tap/bkt  # alias
 
 # Install Jenkins CLI
 brew install avivsinai/tap/jk
@@ -48,14 +49,14 @@ jk job list
 ```bash
 brew update
 brew upgrade bitbucket-cli
-brew upgrade jenkins-cli
+brew upgrade jk
 ```
 
 ## Uninstalling
 
 ```bash
 brew uninstall bitbucket-cli
-brew uninstall jenkins-cli
+brew uninstall jk
 brew untap avivsinai/tap  # optional
 ```
 
