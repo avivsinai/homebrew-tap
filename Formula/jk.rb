@@ -1,7 +1,7 @@
 # typed: false
 # frozen_string_literal: true
 
-class JenkinsCli < Formula
+class Jk < Formula
   desc "CLI for Jenkins - GitHub CLI-style workflows for Jenkins controllers"
   homepage "https://github.com/avivsinai/jenkins-cli"
   version "0.0.13"
@@ -36,6 +36,6 @@ class JenkinsCli < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/jk version")
+    assert_match version.to_s, shell_output("#{bin}/jk --version")
   end
 end
