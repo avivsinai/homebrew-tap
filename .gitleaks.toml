@@ -1,0 +1,42 @@
+# Gitleaks configuration for homebrew-tap
+# https://github.com/gitleaks/gitleaks
+
+title = "Gitleaks Configuration for Homebrew Tap"
+
+[extend]
+useDefault = true
+
+# Additional rules for Homebrew tap specific patterns
+[[rules]]
+id = "github-pat-fine-grained"
+description = "GitHub Fine-Grained Personal Access Token"
+regex = '''github_pat_[0-9a-zA-Z_]{22,}'''
+keywords = ["github_pat_"]
+
+[[rules]]
+id = "github-pat-classic"
+description = "GitHub Classic Personal Access Token"
+regex = '''ghp_[0-9a-zA-Z]{36,}'''
+keywords = ["ghp_"]
+
+[[rules]]
+id = "homebrew-token"
+description = "Homebrew related token patterns"
+regex = '''(?i)(homebrew[_-]?tap[_-]?)?token\s*[:=]\s*['\"]?[a-zA-Z0-9_-]{20,}['\"]?'''
+keywords = ["token"]
+
+# Allowlist for legitimate patterns in Homebrew formulas
+[allowlist]
+description = "Allow legitimate Homebrew formula patterns"
+paths = [
+  '''Formula/.*\.rb$''',
+]
+regexTarget = "match"
+regexes = [
+  # SHA256 checksums are expected in formulas
+  '''sha256\s+['\"][a-f0-9]{64}['\"]''',
+  # Version strings
+  '''version\s+['\"][0-9]+\.[0-9]+\.[0-9]+['\"]''',
+  # URLs to GitHub releases
+  '''https://github\.com/[^/]+/[^/]+/releases/download/''',
+]
