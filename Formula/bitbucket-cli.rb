@@ -11,7 +11,7 @@ class BitbucketCli < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/avivsinai/bitbucket-cli/releases/download/v0.6.0/bkt_0.6.0_darwin_x86_64.tar.gz"
-      sha256 "12dc188cf866043991bf98f27eab2beedd74b3a419d32bf0435316a9e78735dd"
+      sha256 "b2a93f91fe3efb2cead26e97af976b8cd51b1a029612dfcbebcf795be679aa91"
 
       def install
         bin.install "bkt"
@@ -19,7 +19,7 @@ class BitbucketCli < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/avivsinai/bitbucket-cli/releases/download/v0.6.0/bkt_0.6.0_darwin_arm64.tar.gz"
-      sha256 "b3a3fa98d97a0872439fe6aea287f34d9e915d22dbee06e681d98801c2223adf"
+      sha256 "6767f7e01b18ba6c3273abe44a1ea0dbbad0c3ae96282c5a8137571b1046155a"
 
       def install
         bin.install "bkt"
@@ -30,14 +30,14 @@ class BitbucketCli < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/avivsinai/bitbucket-cli/releases/download/v0.6.0/bkt_0.6.0_linux_x86_64.tar.gz"
-      sha256 "b407ecd2a784b4278d76105fb198876ed8814f92f67c4fbd7f2945ccf4a7ddb3"
+      sha256 "c7de3d06498a0b724b788bf48771497247c40120edf80e913301fd59e42f5a08"
       def install
         bin.install "bkt"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/avivsinai/bitbucket-cli/releases/download/v0.6.0/bkt_0.6.0_linux_arm64.tar.gz"
-      sha256 "11a959f89d5f9c36828be7cbd6a19536205882f411957ff2c471da8cb05c18c9"
+      sha256 "53de4b0e8263ab12ff5fdd5d4122b6c780de0adcc8987274072bc75670b48a27"
       def install
         bin.install "bkt"
       end
