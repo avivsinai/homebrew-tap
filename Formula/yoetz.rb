@@ -4,21 +4,21 @@
 class Yoetz < Formula
   desc "Fast CLI-first LLM council, bundler, and multimodal gateway for coding agents"
   homepage "https://github.com/avivsinai/yoetz"
-  version "0.2.0"
+  version "0.2.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/avivsinai/yoetz/releases/download/v0.2.0/yoetz-x86_64-apple-darwin.tar.gz"
-      sha256 "c20052de586853769100e2ddd197f27e607376cbee9c726d6620e197422f5532"
+      url "https://github.com/avivsinai/yoetz/releases/download/v0.2.1/yoetz-x86_64-apple-darwin.tar.gz"
+      sha256 "7cca4b41bc69b45b41b16011df85fa27631aaf8e97c44274dcb6d8d8024de316"
 
       def install
         bin.install "yoetz"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/avivsinai/yoetz/releases/download/v0.2.0/yoetz-aarch64-apple-darwin.tar.gz"
-      sha256 "b5e555abfbb8f848e64d81fc66493ed2fb5b9444a3f5c0f38068f4d498c285d7"
+      url "https://github.com/avivsinai/yoetz/releases/download/v0.2.1/yoetz-aarch64-apple-darwin.tar.gz"
+      sha256 "0713350cc2f1f529d86c70ce7a74e63dc2c4df0f69704cddbad07682ccf72f69"
 
       def install
         bin.install "yoetz"
@@ -28,16 +28,16 @@ class Yoetz < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/avivsinai/yoetz/releases/download/v0.2.0/yoetz-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "17596bc2e5ce493258b6e1d538f3109e1570e029428dc384856c543af8134d6f"
+      url "https://github.com/avivsinai/yoetz/releases/download/v0.2.1/yoetz-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "f103af2881a33881c3e086986e442896853bbfe3f65a7afec2adae46ded64ce9"
 
       def install
         bin.install "yoetz"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/avivsinai/yoetz/releases/download/v0.2.0/yoetz-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "6a3755b6b8089da866ac17ad00a1419f5ffeeb005f028210bd9e384c11b11390"
+      url "https://github.com/avivsinai/yoetz/releases/download/v0.2.1/yoetz-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "7f92c2f84d9b32a1455aafc795715a76ae28ab93c37e44c692a90de1d1267d69"
 
       def install
         bin.install "yoetz"
