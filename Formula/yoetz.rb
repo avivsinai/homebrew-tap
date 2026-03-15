@@ -11,22 +11,22 @@ class Yoetz < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/avivsinai/yoetz/releases/download/v0.2.12/yoetz-x86_64-apple-darwin.tar.gz"
-      sha256 "2c2233442b56017d2dd20d46d9ecd23e3b751682426695decb20a4db33f16c4b"
+      sha256 "076012e95576858a0f0bf2e1df5b9daeee768a980a5ba8e3c67ed9567e011063"
     end
     if Hardware::CPU.arm?
       url "https://github.com/avivsinai/yoetz/releases/download/v0.2.12/yoetz-aarch64-apple-darwin.tar.gz"
-      sha256 "176111a6b6985d87085c751ee06ef8d3809e1d3623bfde9493c756a575310866"
+      sha256 "c752f5fb2247667ba56b77cdfc0fa0d407f2b3c6f4676e55dee48a2428c3ff31"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/avivsinai/yoetz/releases/download/v0.2.12/yoetz-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "905d417cfdc394328757b27a7db363f20853c3a5181114b592d19ba577a7df11"
+      sha256 "9b635592b88d00e65e4a4a5c879c280175cf1c7f2cb9e3385f0b8c306ff29903"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/avivsinai/yoetz/releases/download/v0.2.12/yoetz-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "d2a38a0e7864779456f6ed51adf59aee31fab7249a3012b84e1607d6fab6800e"
+      sha256 "5eefbdec070b8fcb3e87c10d12de7445187313bfbd39f2d6b8c9a7908afe77cb"
     end
   end
 
