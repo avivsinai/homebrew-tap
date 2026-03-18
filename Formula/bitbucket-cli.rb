@@ -5,21 +5,21 @@
 class BitbucketCli < Formula
   desc "CLI for Bitbucket Cloud - manage repos, PRs, and pipelines from the terminal"
   homepage "https://github.com/avivsinai/bitbucket-cli"
-  version "0.12.0"
+  version "0.13.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/avivsinai/bitbucket-cli/releases/download/v0.12.0/bkt_0.12.0_darwin_x86_64.tar.gz"
-      sha256 "83fd35f17597c79073558f4c9405534d559433b121440cace63db15822b50ffa"
+      url "https://github.com/avivsinai/bitbucket-cli/releases/download/v0.13.0/bkt_0.13.0_darwin_x86_64.tar.gz"
+      sha256 "a4e99c61a43ad29c06a6be0d20810bc8be06fc39b5e000dcf760c52235d25a45"
 
       define_method(:install) do
         bin.install "bkt"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/avivsinai/bitbucket-cli/releases/download/v0.12.0/bkt_0.12.0_darwin_arm64.tar.gz"
-      sha256 "04a69bba249633121a9bdb232222cc4dfed70d051658f1550ad63d7583078707"
+      url "https://github.com/avivsinai/bitbucket-cli/releases/download/v0.13.0/bkt_0.13.0_darwin_arm64.tar.gz"
+      sha256 "9f85fe477dd13da4f81d3dec8052cfcad1b53ef368e10a20f5eebebc2c2f5c15"
 
       define_method(:install) do
         bin.install "bkt"
@@ -29,15 +29,15 @@ class BitbucketCli < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/avivsinai/bitbucket-cli/releases/download/v0.12.0/bkt_0.12.0_linux_x86_64.tar.gz"
-      sha256 "f2078c38e08fc0096ec5af7cc7b751a7b812c83be5a5e66d5681b13972901b8f"
+      url "https://github.com/avivsinai/bitbucket-cli/releases/download/v0.13.0/bkt_0.13.0_linux_x86_64.tar.gz"
+      sha256 "12a69e45ba0d00272b8e319a7ee6c2f11592147b86a7c0449412f9bf41b22c44"
       define_method(:install) do
         bin.install "bkt"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/avivsinai/bitbucket-cli/releases/download/v0.12.0/bkt_0.12.0_linux_arm64.tar.gz"
-      sha256 "2cb1f966bcee01f7cc1e65b402ac78e9f39530a41a88c9d530a982e7bd6609c9"
+      url "https://github.com/avivsinai/bitbucket-cli/releases/download/v0.13.0/bkt_0.13.0_linux_arm64.tar.gz"
+      sha256 "bec847c82180d05c894659a79289a89170db955e4137007a7f909e5fc297fa45"
       define_method(:install) do
         bin.install "bkt"
       end
