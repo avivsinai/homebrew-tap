@@ -45,6 +45,6 @@ class BitbucketCli < Formula
   end
 
   test do
-    system "#{bin}/bkt", "version"
+    system "#{bin}/bkt", "--version"
   end
 end
