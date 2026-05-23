@@ -4,29 +4,29 @@
 class Yoetz < Formula
   desc "Fast CLI-first LLM council, bundler, and multimodal gateway for coding agents"
   homepage "https://github.com/avivsinai/yoetz"
-  version "0.5.13"
+  version "0.5.14"
   license "MIT"
   depends_on "node"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/avivsinai/yoetz/releases/download/v0.5.13/yoetz-x86_64-apple-darwin.tar.gz"
-      sha256 "bc8440b925b27e3b620c45f88b6819a85c109654522fe7cc7c2fe499d176e9ae"
+      url "https://github.com/avivsinai/yoetz/releases/download/v0.5.14/yoetz-x86_64-apple-darwin.tar.gz"
+      sha256 "f85cc2c76d3d563764c7d4f48a89c4f2e3c9e9ced35c43ab08b0c57727725996"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/avivsinai/yoetz/releases/download/v0.5.13/yoetz-aarch64-apple-darwin.tar.gz"
-      sha256 "ef25f7c436a725656625c619a0c5136ea134be8e12f2706ed282343bcc55be5c"
+      url "https://github.com/avivsinai/yoetz/releases/download/v0.5.14/yoetz-aarch64-apple-darwin.tar.gz"
+      sha256 "db40a04cba87984bb5b3c7471dce611e73f75fd6441061209ceb86a8310c9395"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/avivsinai/yoetz/releases/download/v0.5.13/yoetz-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "75d136aa060e5479bcf328c435b696de660e716ff9f186530c484ed42bdd1ee0"
+      url "https://github.com/avivsinai/yoetz/releases/download/v0.5.14/yoetz-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "d1c74a5ad53588ee1715542038f72416145c3b3974d82180a55ebaa4a88f4e91"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/avivsinai/yoetz/releases/download/v0.5.13/yoetz-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "eeb46493366a4e21b6b90e7e739dc8987065a21e1a6197b0711ffc8a91c549fa"
+      url "https://github.com/avivsinai/yoetz/releases/download/v0.5.14/yoetz-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "37859847bb6b223162cc36c60b92a5dab63e7072b26d5270819ddd28b0bcd5a4"
     end
   end
 
