@@ -4,28 +4,28 @@
 class Shaon < Formula
   desc "Automate Hilanet attendance, payslips, salary, and reports for your own account"
   homepage "https://github.com/avivsinai/shaon"
-  version "0.9.1"
+  version "0.9.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/avivsinai/shaon/releases/download/v0.9.1/shaon-x86_64-apple-darwin.tar.gz"
-      sha256 "bc85f556e92e1a6e7f870753533a70211e6e8c0c0227faee40bfe286c6f6e29c"
+      url "https://github.com/avivsinai/shaon/releases/download/v0.9.2/shaon-x86_64-apple-darwin.tar.gz"
+      sha256 "d43671fbcb0bb98a56fd8a4ca37a01cafa22f7128fc3e693259d256bf1ad2b09"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/avivsinai/shaon/releases/download/v0.9.1/shaon-aarch64-apple-darwin.tar.gz"
-      sha256 "827016946b3705d61dc46244b724037dc3d2ad398418d2dcbdb34ae4c6c05a32"
+      url "https://github.com/avivsinai/shaon/releases/download/v0.9.2/shaon-aarch64-apple-darwin.tar.gz"
+      sha256 "777e46e32c056b823d135dc42d661da2566c271771b8ec1d09950e92f9d08fd8"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/avivsinai/shaon/releases/download/v0.9.1/shaon-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "376dbdc9667eacc7379772573373e7ceb85f1aecce9d8c4f2fa77b6654d24aac"
+      url "https://github.com/avivsinai/shaon/releases/download/v0.9.2/shaon-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "d88c4072feb79966ac456369865a358ccf6e42db484764d594ac9bbcc54a44a3"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/avivsinai/shaon/releases/download/v0.9.1/shaon-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "7d96aec57167bdee2359ed9529af9218d0cdc527708816755e45c4ce2bef81ff"
+      url "https://github.com/avivsinai/shaon/releases/download/v0.9.2/shaon-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "7d1fb41acadd221be7b8ef67ad2a44653ffd5b49dcd7fe0e640434ea5e52f244"
     end
   end
 
