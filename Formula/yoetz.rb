@@ -4,35 +4,35 @@
 class Yoetz < Formula
   desc "Fast CLI-first LLM council, bundler, and multimodal gateway for coding agents"
   homepage "https://github.com/avivsinai/yoetz"
-  version "0.5.39"
+  version "0.5.40"
   license "MIT"
   depends_on "node"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/avivsinai/yoetz/releases/download/v0.5.39/yoetz-x86_64-apple-darwin.tar.gz"
-      sha256 "6137e7517113eaeab88e5aaba3b09f672a1f039de90b8366e158a46d982dc5e2"
+      url "https://github.com/avivsinai/yoetz/releases/download/v0.5.40/yoetz-x86_64-apple-darwin.tar.gz"
+      sha256 "68857ffa5e1452d989d810127e1a4cea6b26dfe8b3ef7c000cd4315c39014525"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/avivsinai/yoetz/releases/download/v0.5.39/yoetz-aarch64-apple-darwin.tar.gz"
-      sha256 "ff2e808b87a73e2a942347562eb0257dba819844b33ac79ec27f4cd72d454133"
+      url "https://github.com/avivsinai/yoetz/releases/download/v0.5.40/yoetz-aarch64-apple-darwin.tar.gz"
+      sha256 "68e2c2d676c658bd0d59d5e6b5aa5cf1e6bc4ef3a8dce4bd2a44025e238fd865"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/avivsinai/yoetz/releases/download/v0.5.39/yoetz-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "d5502d0bf69419424dd2bbaa81b2ec860b2207423c718bb2201d0d329e10b3bf"
+      url "https://github.com/avivsinai/yoetz/releases/download/v0.5.40/yoetz-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "034179adac741f8c4d8983efc1779a313d46155c4abf3952b8dafa56b4bcb27f"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/avivsinai/yoetz/releases/download/v0.5.39/yoetz-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "83d5b740b6110543ecbe6cb04b49b44b36356b2c994ebd18d353556b912370df"
+      url "https://github.com/avivsinai/yoetz/releases/download/v0.5.40/yoetz-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "831c80ab273bc915a348e1309f76c10c7ccabecd8096dd2ee1529b19d25e8303"
     end
   end
 
   resource "chatgpt_native_extension" do
-    url "https://github.com/avivsinai/yoetz/releases/download/v0.5.39/yoetz-chatgpt-native-extension-0.5.39.zip"
-    sha256 "34b1da4fde12adbafd9315dbbfd2ee9083efa1d4a1cce3b5c4c6b2647c66fe18"
+    url "https://github.com/avivsinai/yoetz/releases/download/v0.5.40/yoetz-chatgpt-native-extension-0.5.40.zip"
+    sha256 "d8aa58fe49c92c00b2e2e6349731dc4665c67a9d7df7ae1e93fd9e1ebc1e9270"
   end
 
   def install
