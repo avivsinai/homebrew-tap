@@ -5,21 +5,21 @@
 class Amq < Formula
   desc "Agent Message Queue - file-based inter-agent messaging for Claude Code and Codex CLI"
   homepage "https://github.com/avivsinai/agent-message-queue"
-  version "0.56.0"
+  version "0.56.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/avivsinai/agent-message-queue/releases/download/v0.56.0/amq_0.56.0_darwin_amd64.tar.gz"
-      sha256 "39d8b37ce4ba48a200a2dbc237709d1980953194f5f8b3ccf735494b5f7ed18b"
+      url "https://github.com/avivsinai/agent-message-queue/releases/download/v0.56.1/amq_0.56.1_darwin_amd64.tar.gz"
+      sha256 "a8f94304c22c8d51ccc08d1b693d2908c3df5bf2f89c98990122e1f2bf764ccb"
 
       define_method(:install) do
         bin.install "amq"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/avivsinai/agent-message-queue/releases/download/v0.56.0/amq_0.56.0_darwin_arm64.tar.gz"
-      sha256 "44cf7da4ef8575f5ad5af7949d8144824e08d014f969ef0a4038bb6bd05152d0"
+      url "https://github.com/avivsinai/agent-message-queue/releases/download/v0.56.1/amq_0.56.1_darwin_arm64.tar.gz"
+      sha256 "ca2315deb8ac0ecce681437ab8fee0167c1c58b53e324fe0c49b8374e0ba70ec"
 
       define_method(:install) do
         bin.install "amq"
@@ -29,15 +29,15 @@ class Amq < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/avivsinai/agent-message-queue/releases/download/v0.56.0/amq_0.56.0_linux_amd64.tar.gz"
-      sha256 "755f2b5f227e3628149e5f52b7af551338b80b2e6fe2c78d6ad6ddcc9095dab4"
+      url "https://github.com/avivsinai/agent-message-queue/releases/download/v0.56.1/amq_0.56.1_linux_amd64.tar.gz"
+      sha256 "c8db8a5cf39513a6d343c6dfabdb5372dd3d63b068d1e077feb8efe60e41c09c"
       define_method(:install) do
         bin.install "amq"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/avivsinai/agent-message-queue/releases/download/v0.56.0/amq_0.56.0_linux_arm64.tar.gz"
-      sha256 "760e728f9177e440017a6dbd9ae0adb519f1458d111d71278808f3e30bd02dd2"
+      url "https://github.com/avivsinai/agent-message-queue/releases/download/v0.56.1/amq_0.56.1_linux_arm64.tar.gz"
+      sha256 "d0ae6c0e20e2d7d8259ad2f36c2b072139c9feb5221d1fd5329b1ecef914d53b"
       define_method(:install) do
         bin.install "amq"
       end
