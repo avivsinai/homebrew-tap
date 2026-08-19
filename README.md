@@ -9,6 +9,7 @@ Homebrew formulae for [avivsinai](https://github.com/avivsinai) CLI tools.
 | `amq` | - | `amq` | Agent Message Queue - file-based inter-agent messaging for Claude Code and Codex CLI |
 | `bitbucket-cli` | `bkt` | `bkt` | CLI for Bitbucket Cloud - manage repos, PRs, and pipelines |
 | `jk` | - | `jk` | CLI for Jenkins - GitHub CLI-style workflows for Jenkins |
+| `sabx` | - | `sabx` | Full-fidelity SABnzbd CLI |
 | `shaon` | - | `shaon` | Automate Hilanet attendance, payslips, salary, and reports for your own account |
 | `yoetz` | - | `yoetz` | Fast CLI-first LLM council, bundler, and multimodal gateway for coding agents |
 
@@ -25,6 +26,9 @@ brew install avivsinai/tap/bkt  # alias
 # Install Jenkins CLI
 brew install avivsinai/tap/jk
 
+# SABnzbd CLI
+brew install avivsinai/tap/sabx
+
 # Hilanet attendance CLI
 brew install avivsinai/tap/shaon
 
@@ -39,6 +43,7 @@ brew tap avivsinai/tap
 brew install amq
 brew install bitbucket-cli
 brew install jk
+brew install sabx
 brew install shaon
 brew install yoetz
 ```
@@ -62,6 +67,11 @@ jk --help
 jk auth login
 jk job list
 
+# SABnzbd CLI
+sabx --help
+sabx login
+sabx queue list
+
 # Hilanet attendance CLI
 shaon --help
 shaon --version
@@ -78,6 +88,7 @@ brew update
 brew upgrade amq
 brew upgrade bitbucket-cli
 brew upgrade jk
+brew upgrade sabx
 brew upgrade shaon
 brew upgrade yoetz
 ```
@@ -88,6 +99,7 @@ brew upgrade yoetz
 brew uninstall amq
 brew uninstall bitbucket-cli
 brew uninstall jk
+brew uninstall sabx
 brew uninstall shaon
 brew uninstall yoetz
 brew untap avivsinai/tap  # optional
@@ -98,6 +110,7 @@ brew untap avivsinai/tap  # optional
 - [agent-message-queue on GitHub](https://github.com/avivsinai/agent-message-queue)
 - [bitbucket-cli on GitHub](https://github.com/avivsinai/bitbucket-cli)
 - [jenkins-cli on GitHub](https://github.com/avivsinai/jenkins-cli)
+- [sabx on GitHub](https://github.com/avivsinai/sabx)
 - [shaon on GitHub](https://github.com/avivsinai/shaon)
 - [yoetz on GitHub](https://github.com/avivsinai/yoetz)
 
