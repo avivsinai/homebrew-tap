@@ -22,8 +22,14 @@ The upstream main package is `./cmd/bkt`. The installed filename is still `bitbu
 
 When you are ready:
 
-1. Fork [Homebrew/homebrew-core](https://github.com/Homebrew/homebrew-core).
-2. Copy `bitbucket-cli.rb` to `Formula/b/bitbucket-cli.rb` in that fork, or generate a starting point with:
+1. Fork [Homebrew/homebrew-core](https://github.com/Homebrew/homebrew-core) and tap the local checkout:
+
+   ```bash
+   brew tap --force homebrew/core
+   cd "$(brew --repository homebrew/core)"
+   ```
+
+2. Copy `bitbucket-cli.rb` to `Formula/b/bitbucket-cli.rb`, or generate a starting point with:
 
    ```bash
    brew create https://github.com/avivsinai/bitbucket-cli/archive/refs/tags/v0.31.0.tar.gz --set-name bitbucket-cli
@@ -34,12 +40,13 @@ When you are ready:
 3. Audit and build against core:
 
    ```bash
-   brew audit --new --strict --online bitbucket-cli
    HOMEBREW_NO_INSTALL_FROM_API=1 brew install --build-from-source bitbucket-cli
    brew test bitbucket-cli
+   brew audit --strict --new --online bitbucket-cli
+   brew style --fix --formula bitbucket-cli
    brew livecheck bitbucket-cli
    ```
 
-4. Open a PR on Homebrew/homebrew-core. State the name collision with dimo414/bkt in the PR body. The install path is `bitbucket-cli`, not `bkt`.
+4. Commit as `bitbucket-cli 0.31.0 (new formula)` and open a PR on Homebrew/homebrew-core. State the name collision with dimo414/bkt in the PR body. The install path is `bitbucket-cli`, not `bkt`.
 
 `brew create` without `--set-name bitbucket-cli` will guess `bkt` from the repository binary. That guess is wrong for core. Override it.

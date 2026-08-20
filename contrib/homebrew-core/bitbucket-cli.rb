@@ -21,7 +21,7 @@ class BitbucketCli < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/bitbucket-cli --version")
-    assert_match "Bitbucket CLI", shell_output("#{bin}/bitbucket-cli --help")
+    assert_match "bkt version #{version}", shell_output("#{bin}/bitbucket-cli --version")
+    assert_match "Bitbucket Data Center and Cloud", shell_output("#{bin}/bitbucket-cli --help")
   end
 end
