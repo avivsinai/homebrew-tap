@@ -32,7 +32,7 @@ When you are ready:
 2. Copy `bitbucket-cli.rb` to `Formula/b/bitbucket-cli.rb`, or generate a starting point with:
 
    ```bash
-   brew create https://github.com/avivsinai/bitbucket-cli/archive/refs/tags/v0.31.0.tar.gz --set-name bitbucket-cli
+   brew create https://github.com/avivsinai/bitbucket-cli/archive/refs/tags/v0.31.1.tar.gz --set-name bitbucket-cli
    ```
 
    Replace the generated body with this draft. Recompute `sha256` from the source tarball (`curl` + `shasum -a 256`). Do not invent it.
@@ -47,6 +47,6 @@ When you are ready:
    brew livecheck bitbucket-cli
    ```
 
-4. Commit as `bitbucket-cli 0.31.0 (new formula)` and open a PR on Homebrew/homebrew-core. State the name collision with dimo414/bkt in the PR body. The install path is `bitbucket-cli`, not `bkt`.
+4. Commit as `bitbucket-cli 0.31.1 (new formula)` and open a PR on Homebrew/homebrew-core. State the name collision with dimo414/bkt in the PR body. The install path is `bitbucket-cli`, not `bkt`.
 
 `brew create` without `--set-name bitbucket-cli` will guess `bkt` from the repository binary. That guess is wrong for core. Override it.
