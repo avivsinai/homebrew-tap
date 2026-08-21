@@ -1,8 +1,8 @@
 class BitbucketCli < Formula
-  desc "CLI for Bitbucket Cloud - manage repos, PRs, and pipelines from the terminal"
+  desc "CLI for Bitbucket Cloud and Data Center"
   homepage "https://github.com/avivsinai/bitbucket-cli"
-  url "https://github.com/avivsinai/bitbucket-cli/archive/refs/tags/v0.31.0.tar.gz"
-  sha256 "aa4edde1d007db2cc55c43d5558d55181ca7058a1899df16167d610e639c3fdc"
+  url "https://github.com/avivsinai/bitbucket-cli/archive/refs/tags/v0.31.1.tar.gz"
+  sha256 "90fe0d9427276df1e3d26615810dbbe1b2c1e4a582c053bff981de90ddbdb994"
   license "MIT"
 
   livecheck do
