@@ -5,46 +5,56 @@
 class Amq < Formula
   desc "Agent Message Queue - file-based inter-agent messaging for Claude Code and Codex CLI"
   homepage "https://github.com/avivsinai/agent-message-queue"
-  version "0.80.1"
+  version "0.81.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/avivsinai/agent-message-queue/releases/download/v0.80.1/amq_0.80.1_darwin_amd64.tar.gz"
-      sha256 "be6c6dd67c03d7c5dcdc9a6f941f11afc9867565b1e357dff8778c2438b6ee78"
+      url "https://github.com/avivsinai/agent-message-queue/releases/download/v0.81.0/amq_0.81.0_darwin_amd64.tar.gz"
+      sha256 "33de4947d8bb04d0d75fa790de6dadf890ea65bee8d01c70e293cbfcc2c110d0"
 
       define_method(:install) do
         bin.install "amq"
+        bin.install "amq-acp"
+        bin.install "amq-remote"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/avivsinai/agent-message-queue/releases/download/v0.80.1/amq_0.80.1_darwin_arm64.tar.gz"
-      sha256 "105cd3dd3879db3a7019458dc65b1d187a4b42292b739920c67a325310d68680"
+      url "https://github.com/avivsinai/agent-message-queue/releases/download/v0.81.0/amq_0.81.0_darwin_arm64.tar.gz"
+      sha256 "5b5290637e1ab480650bdf365a1bcb93b092b2d725e0d40bf967a8eb50dc4d9d"
 
       define_method(:install) do
         bin.install "amq"
+        bin.install "amq-acp"
+        bin.install "amq-remote"
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/avivsinai/agent-message-queue/releases/download/v0.80.1/amq_0.80.1_linux_amd64.tar.gz"
-      sha256 "e0c88290e54e4dbe9aaee1302eebe4fe193adecc149e1d6c4db4c06d97ef15ec"
+      url "https://github.com/avivsinai/agent-message-queue/releases/download/v0.81.0/amq_0.81.0_linux_amd64.tar.gz"
+      sha256 "b930f544f3f62aba188f0f3926977d33c9f4d4787d8574a0f7d7f7e2d411745a"
       define_method(:install) do
         bin.install "amq"
+        bin.install "amq-acp"
+        bin.install "amq-remote"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/avivsinai/agent-message-queue/releases/download/v0.80.1/amq_0.80.1_linux_arm64.tar.gz"
-      sha256 "9428ce3ae04606f6d7707c6ba238748421d3b7bd21695fe69996f29778d788b7"
+      url "https://github.com/avivsinai/agent-message-queue/releases/download/v0.81.0/amq_0.81.0_linux_arm64.tar.gz"
+      sha256 "f8dc6b52731a2d7801091193282877f47422348ef78f5c85fe9b7b68ea220852"
       define_method(:install) do
         bin.install "amq"
+        bin.install "amq-acp"
+        bin.install "amq-remote"
       end
     end
   end
 
   test do
     system "#{bin}/amq", "--version"
+    system "#{bin}/amq-acp", "--version"
+    system "#{bin}/amq-remote", "version"
   end
 end
