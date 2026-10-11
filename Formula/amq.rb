@@ -5,13 +5,13 @@
 class Amq < Formula
   desc "Agent Message Queue - file-based inter-agent messaging for Claude Code and Codex CLI"
   homepage "https://github.com/avivsinai/agent-message-queue"
-  version "0.95.0"
+  version "0.96.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/avivsinai/agent-message-queue/releases/download/v0.95.0/amq_0.95.0_darwin_amd64.tar.gz"
-      sha256 "48379979b3984638c0a341847272266a90497f77b46fb79e1eebceff2bb749da"
+      url "https://github.com/avivsinai/agent-message-queue/releases/download/v0.96.0/amq_0.96.0_darwin_amd64.tar.gz"
+      sha256 "2b27579ecb3f364ef7bf120438e6f5e8aa148ad6dc953a267820225d739cee08"
 
       define_method(:install) do
         bin.install "amq"
@@ -21,8 +21,8 @@ class Amq < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/avivsinai/agent-message-queue/releases/download/v0.95.0/amq_0.95.0_darwin_arm64.tar.gz"
-      sha256 "ecd7e320136df1fce02dcaeab71f4581b9ca63314e143174ecd428089479ee41"
+      url "https://github.com/avivsinai/agent-message-queue/releases/download/v0.96.0/amq_0.96.0_darwin_arm64.tar.gz"
+      sha256 "80c7f86602c2db2b66a53a400f91c82ec8fdd45a1ab658b137f43aeced6a670b"
 
       define_method(:install) do
         bin.install "amq"
@@ -35,8 +35,8 @@ class Amq < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/avivsinai/agent-message-queue/releases/download/v0.95.0/amq_0.95.0_linux_amd64.tar.gz"
-      sha256 "182f5a24f7e90e1a4197b220dc1e0fa853ca80f791a4cc7b66bad56ef659f2d8"
+      url "https://github.com/avivsinai/agent-message-queue/releases/download/v0.96.0/amq_0.96.0_linux_amd64.tar.gz"
+      sha256 "5975d4bd79441fef870039f445752ca63622b14005bb516cd795c02f9f4ff9a2"
       define_method(:install) do
         bin.install "amq"
         bin.install "amq-acp"
@@ -45,8 +45,8 @@ class Amq < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/avivsinai/agent-message-queue/releases/download/v0.95.0/amq_0.95.0_linux_arm64.tar.gz"
-      sha256 "b6202cd25f95484827e3320325e9fa95e1a836bf9c68f553c285772d62e1a010"
+      url "https://github.com/avivsinai/agent-message-queue/releases/download/v0.96.0/amq_0.96.0_linux_arm64.tar.gz"
+      sha256 "f599bcf2c8c8315fa8cbb669d66e4007f7156803de9f7fdf4ebf833bd1dc76bf"
       define_method(:install) do
         bin.install "amq"
         bin.install "amq-acp"
@@ -54,6 +54,14 @@ class Amq < Formula
         bin.install "amq-owner-sign"
       end
     end
+  end
+
+  def caveats
+    <<~EOS
+      After an upgrade, an amq-remote endpoint started by the old version keeps
+      running it. Stop its `amq-remote up` (Ctrl-C, or SIGTERM to its pid) and
+      run `amq-remote up --root <root>` again.
+    EOS
   end
 
   test do
