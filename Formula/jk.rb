@@ -5,21 +5,21 @@
 class Jk < Formula
   desc "CLI for Jenkins - GitHub CLI-style workflows for Jenkins controllers"
   homepage "https://github.com/avivsinai/jenkins-cli"
-  version "0.0.37"
+  version "0.0.38"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/avivsinai/jenkins-cli/releases/download/v0.0.37/jk_0.0.37_darwin_x86_64.tar.gz"
-      sha256 "32dc74688283b98feab0f1e9506c38ec811164e8252586f3eb1fa36ed64d1308"
+      url "https://github.com/avivsinai/jenkins-cli/releases/download/v0.0.38/jk_0.0.38_darwin_x86_64.tar.gz"
+      sha256 "647f17723da1989773477178bc857cd696bd008162211c81113a3290b2ded451"
 
       define_method(:install) do
         bin.install "jk"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/avivsinai/jenkins-cli/releases/download/v0.0.37/jk_0.0.37_darwin_arm64.tar.gz"
-      sha256 "f1a08cd0a4d945e6d501e3c8bb063081664c2eb8835f4fe7e31270a144af64d4"
+      url "https://github.com/avivsinai/jenkins-cli/releases/download/v0.0.38/jk_0.0.38_darwin_arm64.tar.gz"
+      sha256 "cf2a2d97af0c242976d77ab9c0e6848247c86ed9754fb673342170afe4a177ef"
 
       define_method(:install) do
         bin.install "jk"
@@ -29,15 +29,15 @@ class Jk < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/avivsinai/jenkins-cli/releases/download/v0.0.37/jk_0.0.37_linux_x86_64.tar.gz"
-      sha256 "6c195839347850fbe2a16ca79fdfa0178175129b34e716892c924703badba68e"
+      url "https://github.com/avivsinai/jenkins-cli/releases/download/v0.0.38/jk_0.0.38_linux_x86_64.tar.gz"
+      sha256 "13249f92f1027bdc8c9cbecc912ff1e4b281117af9f706452c1c3a821c9a17d4"
       define_method(:install) do
         bin.install "jk"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/avivsinai/jenkins-cli/releases/download/v0.0.37/jk_0.0.37_linux_arm64.tar.gz"
-      sha256 "4e26a8a12f8e07f84464770a2d11e7042eac2daa9ddf172b7559c6d018d93111"
+      url "https://github.com/avivsinai/jenkins-cli/releases/download/v0.0.38/jk_0.0.38_linux_arm64.tar.gz"
+      sha256 "471ef47697a96cc65d89b505841a8d3d34fa8501336ec95a52476fd7aa95b11d"
       define_method(:install) do
         bin.install "jk"
       end
