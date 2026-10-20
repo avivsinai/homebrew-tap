@@ -4,28 +4,28 @@
 class Shaon < Formula
   desc "Automate Hilanet attendance, payslips, salary, and reports for your own account"
   homepage "https://github.com/avivsinai/shaon"
-  version "0.10.1"
+  version "0.10.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/avivsinai/shaon/releases/download/v0.10.1/shaon-x86_64-apple-darwin.tar.gz"
-      sha256 "23f84f0205b77074ec43923d4dab7b2de64172dd8c6e12d984e4ebaa02a3e7a7"
+      url "https://github.com/avivsinai/shaon/releases/download/v0.10.2/shaon-x86_64-apple-darwin.tar.gz"
+      sha256 "d464fe1ce1ffa6b8af60ce36bd292a478b1f704718c5d9d742f4ce5d6aa36f3d"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/avivsinai/shaon/releases/download/v0.10.1/shaon-aarch64-apple-darwin.tar.gz"
-      sha256 "96e334088aeb75c0d14193ac43fca5e02cec32766e850eb140942e17c7bfffcc"
+      url "https://github.com/avivsinai/shaon/releases/download/v0.10.2/shaon-aarch64-apple-darwin.tar.gz"
+      sha256 "90fdd18706905f7ad5e633d52ac41e0f3fcbeca098298692c25710e315539e3c"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/avivsinai/shaon/releases/download/v0.10.1/shaon-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "eb9022a2142acf4cbdc1f61dcb2e2cc14404658b083ace15e34bf8197e74c382"
+      url "https://github.com/avivsinai/shaon/releases/download/v0.10.2/shaon-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "27fd8c00b222450fbc6bc6eb60e6320ac7edf36357ae805aeeeb74c4d9616d76"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/avivsinai/shaon/releases/download/v0.10.1/shaon-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "7b2fa01c78eb8742e02659c44bea43abaf2661649b9dec7e166439d4d9d58f7f"
+      url "https://github.com/avivsinai/shaon/releases/download/v0.10.2/shaon-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "3e570e7e2b77c2fac2a95cdd3a3f1239bc1928e6c881d56ce268fe9b5c5ca68a"
     end
   end
 
@@ -36,7 +36,9 @@ class Shaon < Formula
 
   def caveats
     <<~EOS
-      macOS may ask you to re-approve Keychain access after upgrades.
+      macOS may ask you once to approve Keychain access after an upgrade from an
+      ad-hoc signed build. Developer ID signed releases keep that approval across
+      later upgrades.
     EOS
   end
 
