@@ -5,41 +5,69 @@
 class Sabx < Formula
   desc "Full-fidelity SABnzbd CLI"
   homepage "https://github.com/avivsinai/sabx"
-  version "0.1.11"
+  version "0.1.12"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/avivsinai/sabx/releases/download/v0.1.11/sabx_0.1.11_darwin_x86_64.tar.gz"
-      sha256 "969af50573877acba3973b0791232c30238c18791f765c3bffee6249a33f0e22"
+      url "https://github.com/avivsinai/sabx/releases/download/v0.1.12/sabx_0.1.12_darwin_x86_64.tar.gz"
+      sha256 "207ae5d16614c8a694f027c9e24e55cb5d10331583841face626bb93249fbea2"
 
       define_method(:install) do
         bin.install "sabx"
+        if OS.mac?
+          signature = Utils.popen_read("/usr/bin/codesign", "-dv", bin/"sabx", err: :out)
+          unless signature.match?(/^TeamIdentifier=(?!not set$)\S+$/)
+            system "/usr/bin/codesign", "--force", "--sign", "-", "--identifier", "io.github.avivsinai.sabx",
+                   "-r=designated => identifier \"io.github.avivsinai.sabx\"", bin/"sabx"
+          end
+        end
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/avivsinai/sabx/releases/download/v0.1.11/sabx_0.1.11_darwin_arm64.tar.gz"
-      sha256 "2a258f056940a8837fee2d8acc81b6bd4f9de92a4e543807ae8f5e6209b2e466"
+      url "https://github.com/avivsinai/sabx/releases/download/v0.1.12/sabx_0.1.12_darwin_arm64.tar.gz"
+      sha256 "ec71a4c14fbcb74c0afd17f2724901c7cc4bbb1e4c57b662bd3ab7f517073483"
 
       define_method(:install) do
         bin.install "sabx"
+        if OS.mac?
+          signature = Utils.popen_read("/usr/bin/codesign", "-dv", bin/"sabx", err: :out)
+          unless signature.match?(/^TeamIdentifier=(?!not set$)\S+$/)
+            system "/usr/bin/codesign", "--force", "--sign", "-", "--identifier", "io.github.avivsinai.sabx",
+                   "-r=designated => identifier \"io.github.avivsinai.sabx\"", bin/"sabx"
+          end
+        end
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/avivsinai/sabx/releases/download/v0.1.11/sabx_0.1.11_linux_x86_64.tar.gz"
-      sha256 "6d4c052d31dba5393934c0b61c4effd6aa51065e042b9211e9868e437c9ee4fc"
+      url "https://github.com/avivsinai/sabx/releases/download/v0.1.12/sabx_0.1.12_linux_x86_64.tar.gz"
+      sha256 "0cec7aa58b7f26ca40fb0e075bb4725aa0a3b950f1a99bde4e6f47392b0609e0"
       define_method(:install) do
         bin.install "sabx"
+        if OS.mac?
+          signature = Utils.popen_read("/usr/bin/codesign", "-dv", bin/"sabx", err: :out)
+          unless signature.match?(/^TeamIdentifier=(?!not set$)\S+$/)
+            system "/usr/bin/codesign", "--force", "--sign", "-", "--identifier", "io.github.avivsinai.sabx",
+                   "-r=designated => identifier \"io.github.avivsinai.sabx\"", bin/"sabx"
+          end
+        end
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/avivsinai/sabx/releases/download/v0.1.11/sabx_0.1.11_linux_arm64.tar.gz"
-      sha256 "e1633b14942b699f2616dd46c0addfa8772914bad6c7e9bffea87320ae943c19"
+      url "https://github.com/avivsinai/sabx/releases/download/v0.1.12/sabx_0.1.12_linux_arm64.tar.gz"
+      sha256 "97ba0123252c485b83d33dddfcb4b7fee4a60d791e85658b321f6d0f7df21c77"
       define_method(:install) do
         bin.install "sabx"
+        if OS.mac?
+          signature = Utils.popen_read("/usr/bin/codesign", "-dv", bin/"sabx", err: :out)
+          unless signature.match?(/^TeamIdentifier=(?!not set$)\S+$/)
+            system "/usr/bin/codesign", "--force", "--sign", "-", "--identifier", "io.github.avivsinai.sabx",
+                   "-r=designated => identifier \"io.github.avivsinai.sabx\"", bin/"sabx"
+          end
+        end
       end
     end
   end
