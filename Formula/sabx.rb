@@ -5,13 +5,13 @@
 class Sabx < Formula
   desc "Full-fidelity SABnzbd CLI"
   homepage "https://github.com/avivsinai/sabx"
-  version "0.1.12"
+  version "0.1.16"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/avivsinai/sabx/releases/download/v0.1.12/sabx_0.1.12_darwin_x86_64.tar.gz"
-      sha256 "207ae5d16614c8a694f027c9e24e55cb5d10331583841face626bb93249fbea2"
+      url "https://github.com/avivsinai/sabx/releases/download/v0.1.16/sabx_0.1.16_darwin_x86_64.tar.gz"
+      sha256 "c2b0b040da36f0f07091e61ed6ee653b0ca21cc8d04b64b09a4ea6aaff1f4360"
 
       define_method(:install) do
         bin.install "sabx"
@@ -25,8 +25,8 @@ class Sabx < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/avivsinai/sabx/releases/download/v0.1.12/sabx_0.1.12_darwin_arm64.tar.gz"
-      sha256 "ec71a4c14fbcb74c0afd17f2724901c7cc4bbb1e4c57b662bd3ab7f517073483"
+      url "https://github.com/avivsinai/sabx/releases/download/v0.1.16/sabx_0.1.16_darwin_arm64.tar.gz"
+      sha256 "01150546eff32d557a74c8316640cd5c805ba36251ded56835097363cfc03470"
 
       define_method(:install) do
         bin.install "sabx"
@@ -43,8 +43,8 @@ class Sabx < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/avivsinai/sabx/releases/download/v0.1.12/sabx_0.1.12_linux_x86_64.tar.gz"
-      sha256 "0cec7aa58b7f26ca40fb0e075bb4725aa0a3b950f1a99bde4e6f47392b0609e0"
+      url "https://github.com/avivsinai/sabx/releases/download/v0.1.16/sabx_0.1.16_linux_x86_64.tar.gz"
+      sha256 "5102e6702cf36461b08c2adbf76e5e8628ac9b537175d56bff14a51b87262695"
       define_method(:install) do
         bin.install "sabx"
         if OS.mac?
@@ -57,8 +57,8 @@ class Sabx < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/avivsinai/sabx/releases/download/v0.1.12/sabx_0.1.12_linux_arm64.tar.gz"
-      sha256 "97ba0123252c485b83d33dddfcb4b7fee4a60d791e85658b321f6d0f7df21c77"
+      url "https://github.com/avivsinai/sabx/releases/download/v0.1.16/sabx_0.1.16_linux_arm64.tar.gz"
+      sha256 "bd2d6c13f8d72c9874a54b4ef8973b11c6588e81d0d7480f77cc6043ac6e8ffc"
       define_method(:install) do
         bin.install "sabx"
         if OS.mac?
