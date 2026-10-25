@@ -5,13 +5,13 @@
 class Amq < Formula
   desc "Agent Message Queue - file-based inter-agent messaging for Claude Code and Codex CLI"
   homepage "https://github.com/avivsinai/agent-message-queue"
-  version "0.107.0"
+  version "0.108.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/avivsinai/agent-message-queue/releases/download/v0.107.0/amq_0.107.0_darwin_amd64.tar.gz"
-      sha256 "d4b9f07f0133044ebf0bcb60e660aa0714c3d590a5916d4248e315c1ebc31472"
+      url "https://github.com/avivsinai/agent-message-queue/releases/download/v0.108.0/amq_0.108.0_darwin_amd64.tar.gz"
+      sha256 "f7be509793221a31e9d330be13911552452b861446b3eb745e8d8acd4a56287e"
 
       define_method(:install) do
         bin.install "amq"
@@ -19,11 +19,12 @@ class Amq < Formula
         bin.install "amq-remote"
         bin.install "amq-owner-sign"
         bin.install "amq-bridge"
+        bin.install "amq-board"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/avivsinai/agent-message-queue/releases/download/v0.107.0/amq_0.107.0_darwin_arm64.tar.gz"
-      sha256 "ef9805bd050877492d7b07fc4002e693f6a71f1bcd26d1349c2ffa8400452071"
+      url "https://github.com/avivsinai/agent-message-queue/releases/download/v0.108.0/amq_0.108.0_darwin_arm64.tar.gz"
+      sha256 "cb366172ee518b03cfdbeb7a9696d1ffef5feb08dd6017e1c657018ba759f821"
 
       define_method(:install) do
         bin.install "amq"
@@ -31,31 +32,34 @@ class Amq < Formula
         bin.install "amq-remote"
         bin.install "amq-owner-sign"
         bin.install "amq-bridge"
+        bin.install "amq-board"
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/avivsinai/agent-message-queue/releases/download/v0.107.0/amq_0.107.0_linux_amd64.tar.gz"
-      sha256 "095eb17cabaf4ef8884f16254bb50251df7057f330285cf273fc8ab3f8609a66"
+      url "https://github.com/avivsinai/agent-message-queue/releases/download/v0.108.0/amq_0.108.0_linux_amd64.tar.gz"
+      sha256 "f11a901de4d35cc677c8ea2b2896c7f9521fcb976579c513f8e7530fe0112e3c"
       define_method(:install) do
         bin.install "amq"
         bin.install "amq-acp"
         bin.install "amq-remote"
         bin.install "amq-owner-sign"
         bin.install "amq-bridge"
+        bin.install "amq-board"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/avivsinai/agent-message-queue/releases/download/v0.107.0/amq_0.107.0_linux_arm64.tar.gz"
-      sha256 "e7884f36375128f4c37a20af184a059a2d4bb2dc9100f5813d5c542cb21599d1"
+      url "https://github.com/avivsinai/agent-message-queue/releases/download/v0.108.0/amq_0.108.0_linux_arm64.tar.gz"
+      sha256 "379774debb3376713d4ba12ec2968d0ae39c206223a6bc1d314c3a13a7b466a1"
       define_method(:install) do
         bin.install "amq"
         bin.install "amq-acp"
         bin.install "amq-remote"
         bin.install "amq-owner-sign"
         bin.install "amq-bridge"
+        bin.install "amq-board"
       end
     end
   end
@@ -74,5 +78,6 @@ class Amq < Formula
     system "#{bin}/amq-remote", "version"
     system "#{bin}/amq-owner-sign", "--version"
     system "#{bin}/amq-bridge", "--version"
+    system "#{bin}/amq-board", "--version"
   end
 end
